@@ -1,0 +1,19 @@
+/* src/components/ChatBox.css */
+.chat-box-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-list {
+    height: 300px;
+    overflow-y: auto;
+  }
+  
+  .message {
+    padding: 10px;
+  }
+
+  .chat-box-container.shifted {
+    transform: translateY(-50px); /* Move up when first message is sent */
+    transition: transform .5s ease-in-out;
+ }
