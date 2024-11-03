@@ -1,30 +1,51 @@
 /* src/Chat.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body, html {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto; /* Allow scrolling on the body */
+    background-image: url('./background3.jpeg');
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    position: relative;
+}
+
 .chat-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    max-width: 600px;
+    width: 55%;
+    height: 90vh;
     margin: 0 auto;
-    background-color: #f7f7f8;
-    border: 1px solid #ddd;
-    font-family: Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow:  0 0 15px 5px rgba(87, 158, 87, 0.5);
+    font-family: 'Inter', sans-serif;
+    border-radius: 25px;
 }
 
 .chat-header {
-    background-color: #1b5e20;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 18px;
+    padding: 20px 15px;
+    font-size: 38px;
     font-weight: bold;
     text-align: center;
+    background: linear-gradient(90deg, rgb(197, 234, 165) 0%, rgba(34, 193, 195, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 
 .messages-container {
     flex: 1;
     padding: 15px;
-    overflow-y: auto;
-    background: linear-gradient(to bottom, #73730d, #cdb204);
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     /* background-color: #e0e8d0; */
 }
 
@@ -32,19 +53,21 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    border-top: 1px solid #ddd;
-    background-color: #faf4eb;
+    margin-bottom: 10px;
 }
 
 input {
     flex: 1;
-    padding: 10px;
+    margin-top: 10px;
+    padding: 25px;
     font-size: 16px;
-    border: 1px solid #ccc;
     border-radius: 20px;
     outline: none;
     margin-right: 10px;
     padding-left: 15px;
+    border-color: #8ba57d;
+    color: black;
+
 }
 
 button {
@@ -65,24 +88,27 @@ button i {
 }
 
 button:hover {
-    background-color:#03472e;
+    background-color: #54644b;
 }
 
 .expandable-textarea {
     flex: 1;
-    padding: 10px;
+    padding: 10px 15px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 20px;
     resize: none; /* Prevent manual resizing */
     overflow: hidden;
     outline: none;
-    margin-right: 10px;
+    margin-right: 15px;
+    margin-left: 10px;
     line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    color: rgb(224, 248, 240);
 }
 
 /* Ensures the textarea grows to fit the content */
 .expandable-textarea:focus {
-    min-height: 40px;
+    min-height: 20px;
     max-height: 150px; /* Limits how much it can expand */
 }
