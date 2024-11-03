@@ -1,0 +1,143 @@
+/* src/Chat.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body, html {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    height: 90vh;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.75);
+    box-shadow:  0 0 15px 5px rgba(87, 158, 87, 0.5);
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 0px;
+    border-radius: 25px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Initial position shifted down */
+    animation: fadeInUp 1s forwards; /* Fade-in and shift-up animation */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+
+.landing-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure the landing page takes at least the full viewport height */
+    width: 100%;
+    background-image: url('./background3.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.chat-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 3em;
+    opacity: 0;
+    animation: fadeInGrow 2s forwards; /* Apply the fade-in and grow-in animation */
+    background: linear-gradient(90deg, rgba(203, 247, 165, 1) 0%, rgb(203, 141, 25) 100%); /* Gradient colors */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 15px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    background: rgba(255, 255, 255, 0.0.05);
+}
+
+.messages-container::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+input {
+    flex: 1;
+    margin-top: 10px;
+    padding: 25px;
+    font-size: 16px;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 10px;
+    padding-left: 15px;
+    border-color: #8ba57d;
+    color: black;
+
+}
+
+button {
+    background-color: #8ba57d;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+button i {
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #54644b;
+}
+
+.expandable-textarea {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #cbe0c956;
+    border-radius: 20px;
+    resize: none; /* Prevent manual resizing */
+    overflow: hidden;
+    outline: none;
+    margin-right: 15px;
+    margin-left: 10px;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    background-color: rgba(108, 147, 74, 0.11);
+}
+
+/* Ensures the textarea grows to fit the content */
+.expandable-textarea:focus {
+    min-height: 30px;
+    max-height: 200px; /* Limits how much it can expand */
+}
