@@ -9,11 +9,11 @@ for i in range(len(df)):
 	count = 0
 	# In each row, if there is an instance of 'KR', add 1 to the count
 	if 'KR' in df['invasive'][i]:
-		count += 1
-	if 'JG' in df['invasive'][i]:
-		count += 2
-	if 'P' in df['invasive'][i]:
 		count += 3
+	if 'JG' in df['invasive'][i]:
+		count += 5
+	if 'P' in df['invasive'][i]:
+		count += 7
 	df.loc[i, 'invasive'] = count
 	count = 0
 	if 'river' in df['water_sources'][i]:
