@@ -33,4 +33,4 @@ response = model.generate_content(feature_1_prompt)
 text_response = response.text.strip() if hasattr(response, 'text') else response['text'].strip()
 
 # print(text_response)
-print(trim_quotes(text_response))
+print(f"RTW_Bot: {trim_quotes(text_response)}")
