@@ -4,6 +4,8 @@
 
 import google.generativeai as genai
 
+import json
+
 # TOOD: Make sure 
 import os
 from dotenv import load_dotenv, dotenv_values 
@@ -31,6 +33,7 @@ def trim_quotes(s):
 
 
 global_doc_id = ""
+global curr_feature_index
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------
 #----------------------------------------------------------------End of global definitions---------------------------------------------------------------
@@ -237,29 +240,36 @@ def feature_5_prompt():
     })
 
 
+def main(request):
+
+    global curr_feature_index
+
+    payload = json.loads(request.payload)
+    curr_feature_index = payload.get("count")
+
 
 
 
 if(__name__ == "__main__"):
 
     #TODO: Get iteration number
-    iteration_num = 0
+    iteration_num = curr_feature_index
 
-    # if(iteration_num == 1):
-    #     feature_1_prompt()
-    # elif(iteration_num == 2):
-    #     feature_2_prompt()
-    # elif(iteration_num == 3):
-    #     feature_3_prompt()
-    # elif(iteration_num == 4):
-    #     feature_4_prompt()
-    # elif(iteration_num == 5):
-    #     feature_5_prompt()
+    if(iteration_num == 1):
+        feature_1_prompt()
+    elif(iteration_num == 2):
+        feature_2_prompt()
+    elif(iteration_num == 3):
+        feature_3_prompt()
+    elif(iteration_num == 4):
+        feature_4_prompt()
+    elif(iteration_num == 5):
+        feature_5_prompt()
 
-    feature_1_prompt()
-    feature_2_prompt()
-    feature_3_prompt()
-    feature_4_prompt()
-    feature_5_prompt()
+    # feature_1_prompt()
+    # feature_2_prompt()
+    # feature_3_prompt()
+    # feature_4_prompt()
+    # feature_5_prompt()
 
         
