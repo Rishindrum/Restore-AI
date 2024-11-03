@@ -35,26 +35,37 @@ def preprocess_input_data(Pclass, Sex, Age, SibSp, Parch, Fare, Embarked):
 # Use this to predict the class of a new observation from the tree
 def predict_tree(tree, X_test):
     feature_idx = tree['feature_idx']
+    split_point = tree['split_point']
 
-    if X_test[feature_idx] <= tree['split_point']:
-        if type(tree['left_split']) == dict:
-            return predict_tree(tree['left_split'], X_test)
+    if isinstance(split_point, list):
+        if set(X_test[feature_idx]).issubset(set(split_point)):
+            if isinstance(tree['left_split'], dict):
+                return predict_tree(tree['left_split'], X_test)
+            else:
+                return tree['left_split']
         else:
-            value = tree['left_split']
-            return value
+            if isinstance(tree['right_split'], dict):
+                return predict_tree(tree['right_split'], X_test)
+            else:
+                return tree['right_split']
     else:
-        if type(tree['right_split']) == dict:
-            return predict_tree(tree['right_split'], X_test)
+        if X_test[feature_idx] <= split_point:
+            if isinstance(tree['left_split'], dict):
+                return predict_tree(tree['left_split'], X_test)
+            else:
+                return tree['left_split']
         else:
-            return tree['right_split']
-
+            if isinstance(tree['right_split'], dict):
+                return predict_tree(tree['right_split'], X_test)
+            else:
+                return tree['right_split']
 
 # Use this to predict the class of a new observation from the forest
 def predict_rf(tree_ls, X_test):
     pred_ls = list()
     for i in range(len(X_test)):
         ensemble_preds = [predict_tree(tree, X_test.values[i]) for tree in tree_ls]
-        final_pred = max(ensemble_preds, key = ensemble_preds.count)
+        final_pred = max(ensemble_preds, key=ensemble_preds.count)
         pred_ls.append(final_pred)
     return np.array(pred_ls)
 
