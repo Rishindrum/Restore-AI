@@ -18,10 +18,11 @@
     border-radius: 10px;
     font-size: 15px;
     line-height: 1.5;
+    text-align: left;
 }
 
 .message.user .message-bubble {
-    background-color: #caa472;
+    background-color: #886538;
     color: #fff;
     border-top-right-radius: 0;
 }

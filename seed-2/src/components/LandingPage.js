@@ -7,7 +7,7 @@ const LandingPage = () => {
     return (
         <div className="landing-page">
             <div className="overlay"></div>
-            <h1>Germinance</h1>
+            <h1>RestoreAI</h1>
             <p className="description">Reviving the Blackland Prairie, one seed at a time.</p>
             <Link to="/chat" className="start-button">
                 Let's get started!
