@@ -45,7 +45,7 @@ client
 
 const db = new Databases(client);
 const functions = new Functions(client);
-const docID = ID.unique();
+const docID = "6727a6d300207c491819";
 
 const counterDocID = '67279147001c3ffe6481';
 
@@ -109,7 +109,7 @@ export const sendUserMessageToDB = async(msg, counter) =>{
             console.log("position ", counter)
             // await deleteAllDocuments(appwriteConfig.UserToBot_collectionID);
 
-            const message = await db.createDocument(
+            const message = await db.updateDocument(
                 appwriteConfig.databaseId, 
                 appwriteConfig.UserToBot_collectionID,
                 docID,
