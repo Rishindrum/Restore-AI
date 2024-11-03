@@ -1,0 +1,88 @@
+/* src/Chat.css */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f7f7f8;
+    border: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+}
+
+.chat-header {
+    background-color: #1b5e20;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #73730d, #cdb204);
+    /* background-color: #e0e8d0; */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #faf4eb;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    margin-right: 10px;
+    padding-left: 15px;
+}
+
+button {
+    background-color: #8ba57d;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+button i {
+    font-size: 16px;
+}
+
+button:hover {
+    background-color:#03472e;
+}
+
+.expandable-textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    resize: none; /* Prevent manual resizing */
+    overflow: hidden;
+    outline: none;
+    margin-right: 10px;
+    line-height: 1.5;
+}
+
+/* Ensures the textarea grows to fit the content */
+.expandable-textarea:focus {
+    min-height: 40px;
+    max-height: 150px; /* Limits how much it can expand */
+}

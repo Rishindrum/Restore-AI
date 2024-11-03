@@ -1,0 +1,33 @@
+/* src/Message.css */
+.message {
+    display: flex;
+    margin: 5px 0;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message-bot {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.message.user .message-bubble {
+    background-color: #caa472;
+    color: #fff;
+    border-top-right-radius: 0;
+}
+
+.message.bot .message-bubble {
+    background-color: #e0e8d0;
+    color: #333;
+    border-top-left-radius: 0;
+}

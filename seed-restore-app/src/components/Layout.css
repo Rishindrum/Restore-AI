@@ -2,15 +2,17 @@
 .layout-container {
     position: relative;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers content vertically */
   }
   
-  .clouds {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100px;
-    background-image: url('cloud.webp');
-    animation: moveClouds 60s linear infinite;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
   }
   
   @keyframes moveClouds {

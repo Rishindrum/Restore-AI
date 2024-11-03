@@ -1,0 +1,43 @@
+/* src/components/CloudsAndSun.css */
+.sky {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: #87CEEB; /* Sky blue */
+    overflow: hidden;
+  }
+  
+  .cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 60px;
+  }
+  
+  .cloud-1 {
+    top: 20px;
+    left: -150px;
+    animation: moveClouds 20s linear infinite;
+  }
+  
+  .cloud-2 {
+    top: 60px;
+    left: -200px;
+    animation: moveClouds 25s linear infinite;
+  }
+  
+  @keyframes moveClouds {
+    from { left: -200px; }
+    to { left: calc(100% + 200px); }
+  }
+  
+  .sun {
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+  }
